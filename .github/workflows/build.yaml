@@ -38,12 +38,9 @@ jobs:
           # Checkout the main branch
           git checkout main
           
-          # Copy the build files
-          if [ -d "build" ]; then rm -rf build; fi
-          cp -r build/ build/
-
+      
           # Add the build files to git
-          git add -A
+          git add .
           
           # Commit the build files
           git commit -m 'Update build output' || echo "No changes to commit"
