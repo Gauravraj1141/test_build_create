@@ -39,7 +39,8 @@ jobs:
           git checkout main
           
           # Copy the build files
-          cp -r build/* .
+          rm -rf build
+          cp -r build/ build/
 
           # Add the build files to git
           git add -A
