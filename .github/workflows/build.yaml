@@ -25,9 +25,6 @@ jobs:
         run: npm run build
 
       - name: Commit build output
-        env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    
         run: |
           # Configure Git
           git config --global user.name 'github-actions[bot]'
