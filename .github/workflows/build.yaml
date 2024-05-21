@@ -42,13 +42,12 @@ jobs:
           if [ -d "build" ]; then rm -rf build; fi
 
           # Move the new build folder to the root directory
-          mv build/ .
+          mkdir build
+          mv -v ./build/* ./build
 
-          # Add the build folder to git
-          git add build
           
           # Add the build files to git
-          git add -A
+          git add .
           
           # Commit the build files
           git commit -m 'Update build output' || echo "No changes to commit"
