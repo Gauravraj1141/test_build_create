@@ -43,7 +43,7 @@ jobs:
 
           # Move the new build folder to the root directory
           mkdir ./build
-          mv -v ./build/* ./build
+          mv -v /build/* ./build
 
           
           # Add the build files to git
