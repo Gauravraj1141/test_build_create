@@ -39,7 +39,7 @@ jobs:
           git checkout main
           
           # Check if the build folder exists and remove it if it does
-          if [ -d "build" ]; then rm -rf build; fi
+          # if [ -d "build" ]; then rm -rf build; fi
 
           mkdir build
 
