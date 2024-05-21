@@ -1,0 +1,50 @@
+name: Build and Update React App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Specify the Node.js version
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the React app
+        run: npm run build
+
+      - name: Commit build output
+        run: |
+          # Configure Git
+          git config --global Gauravraj1141 'github-actions[bot]'
+          git config --global hanudasgaurav@gmail.com 'github-actions[bot]@users.noreply.github.com'
+          
+          # Create a new branch for the build output if it doesn't exist
+          git branch -f build-output
+
+          # Checkout the build-output branch
+          git checkout build-output
+          
+          # Copy the build files
+          cp -r build/* .
+
+          # Add the build files to git
+          git add -A
+          
+          # Commit the build files
+          git commit -m 'Update build output' || echo "No changes to commit"
+
+          # Push the changes
+          git push -f origin main
+        
