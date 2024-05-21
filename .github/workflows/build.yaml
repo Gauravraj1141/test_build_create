@@ -27,8 +27,8 @@ jobs:
       - name: Commit build output
         run: |
           # Configure Git
-          git config --global Gauravraj1141 'github-actions[bot]'
-          git config --global hanudasgaurav@gmail.com 'github-actions[bot]@users.noreply.github.com'
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           
           # Create a new branch for the build output if it doesn't exist
           git branch -f build-output
