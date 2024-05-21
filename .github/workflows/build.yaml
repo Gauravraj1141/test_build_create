@@ -35,12 +35,20 @@ jobs:
           
         
 
-          # Checkout the main branch
+          # Checkout the build-output branch
           git checkout main
           
-      
+          # Check if the build folder exists and remove it if it does
+          if [ -d "build" ]; then rm -rf build; fi
+
+          # Move the new build folder to the root directory
+          mv build/ .
+
+          # Add the build folder to git
+          git add build
+          
           # Add the build files to git
-          git add .
+          git add -A
           
           # Commit the build files
           git commit -m 'Update build output' || echo "No changes to commit"
