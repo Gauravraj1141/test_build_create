@@ -33,11 +33,10 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           
-          # Create a new branch for the build output if it doesn't exist
-          git branch -f build-output
+        
 
-          # Checkout the build-output branch
-          git checkout build-output
+          # Checkout the main branch
+          git checkout main
           
           # Copy the build files
           cp -r build/* .
