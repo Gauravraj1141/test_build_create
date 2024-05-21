@@ -42,7 +42,7 @@ jobs:
           if [ -d "build" ]; then rm -rf build; fi
 
           # Move the new build folder to the root directory
-          mkdir build
+          mkdir ./build
           mv -v ./build/* ./build
 
           
