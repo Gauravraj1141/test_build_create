@@ -41,8 +41,7 @@ jobs:
           # Check if the build folder exists and remove it if it does
           # if [ -d "build" ]; then rm -rf build; fi
 
-          mkdir build
-
+          
           # Copy the contents of the generated build directory into the new base_build directory
           cp -r build/* build/
 
